@@ -15,6 +15,7 @@ import SupportIcon from './icons/IconSupport.vue'*/
 const HomeAdd={
 
   domek:{
+    name:'',
     kind:'tree',
     animals:[],
   },
@@ -47,7 +48,12 @@ const HomeAdd={
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-              body: JSON.stringify({house:{kind:HomeAdd.domek.kind,animals:animals}})
+              body: JSON.stringify({house:{
+                kind:HomeAdd.domek.kind,
+                name:HomeAdd.domek.name,
+                price:parseFloat(HomeAdd.domek.price),
+                animals:animals,
+                }})
       },).then(async rawResponse =>{
           var content = await rawResponse.json()
           console.log(content);
@@ -59,6 +65,10 @@ const HomeAdd={
 
 <template>
   <form>
+    <div class="form-group">
+      <label>Nazwa oferty</label>
+      <input class="form-control" v-model="HomeAdd.domek.name"/>
+    </div>
     <div class="form-group">
       <label>Rodzaj montowania</label>
       <select class="form-select" v-model="HomeAdd.domek.kind">
@@ -81,6 +91,11 @@ const HomeAdd={
         <input type="checkbox" v-model="HomeAdd.domek.animals.Dziki" value="Dziki" id="Dziki"/>
         <label for="Dziki">Dziki</label>
      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Cena w PLN</label>
+      <input class="form-control" v-model="HomeAdd.domek.price"/>
     </div>
 
   <button v-on:click="HomeAdd.addHouse()" class="btn btn-primary" type="button">Zapisz</button>

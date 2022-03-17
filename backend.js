@@ -38,9 +38,9 @@ app.get('/api/houses.js', async (req, res) => {
 app.post('/api/houses', async (req, res) => {
     console.log(req.body)
 
-    const rows=[
-        req.body,
-    ]
+    const rows=fs.readFileSync('./datasets/houses.json').toJSON()
+
+    rows.push(req.body.house)
 
     fs.writeFileSync('./datasets/houses.json',JSON.stringify(rows))
 
