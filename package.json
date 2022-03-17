@@ -8,8 +8,11 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "express-cors": "^0.0.3",
+    "fs": "^0.0.1-security",
     "http-cors": "^2.0.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12"
