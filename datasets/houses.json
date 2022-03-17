@@ -1,1 +1,1 @@
-[{"house":{"kind":"tree","name":"karmik","price":49.9,"animals":["Ptaki"]}}]
+[{"kind":"tree","name":"karmik","price":49.9,"animals":["Ptaki"]},{"kind":"ground","name":"karmik","price":55.99,"animals":["Sarny","Lisy","Dziki"]},{"kind":"tree","name":"test","price":111.99,"animals":["Lisy","Dziki"]}]

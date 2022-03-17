@@ -29,13 +29,15 @@ Houses.methods.loadHouses()*/
 </script>
 
 <template>
-  <RouterLink to="/domki/dodaj">Dodaj</RouterLink>
+  <div class="p-5 pt-5">
+    <RouterLink to="/domki/dodaj" class="btn btn-primary">Dodaj</RouterLink>
+  </div>
 
   <HouseItem v-for="House in Houses" v-bind:key="House">
-    <template #heading>Documentation</template>
+    <template #heading>{{House.name}}</template>
 
-    Vue’s
-    <a target="_blank" href="https://vuejs.org/">official documentation</a>
-    provides you with all information you need to get started.
+    {{House.name}}
+    <a target="_blank" href="https://vuejs.org/">{{House.name}}</a>
+    <div v-for="animal in House.animals" v-bind:key="animal">{{animal}}</div>
   </HouseItem>
 </template>

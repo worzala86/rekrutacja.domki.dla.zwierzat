@@ -54,9 +54,10 @@ const HomeAdd={
                 price:parseFloat(HomeAdd.domek.price),
                 animals:animals,
                 }})
-      },).then(async rawResponse =>{
-          var content = await rawResponse.json()
-          console.log(content);
+      },).then(async resp =>{
+        if(resp){
+          location.href = '/domki';
+        }
       });
   }
 }
@@ -64,30 +65,30 @@ const HomeAdd={
 </script>
 
 <template>
-  <form>
-    <div class="form-group">
+  <form class=" pt-5 p-5">
+    <div class="form-group pt-2 p-2">
       <label>Nazwa oferty</label>
       <input class="form-control" v-model="HomeAdd.domek.name"/>
     </div>
-    <div class="form-group">
+    <div class="form-group pt-2 p-2">
       <label>Rodzaj montowania</label>
       <select class="form-select" v-model="HomeAdd.domek.kind">
         <option value="tree" selected>Wieszany na drzewie</option>
         <option value="ground">Montowany na ziemi</option>
       </select>
     </div>
-    <div class="">
+    <div class=" pt-2 p-2">
       <h3>Przeznaczony dla zwierząt</h3>
-       <div class="custom-control custom-checkbox">
+       <div class="custom-control custom-checkbox pt-1 p-1">
         <input type="checkbox" v-model="HomeAdd.domek.animals.Ptaki" value="Ptaki" id="Ptaki"/>
         <label for="Ptaki">Ptaki</label>
-</div><div class="custom-control custom-checkbox">
+</div><div class="custom-control custom-checkbox pt-1 p-1">
         <input type="checkbox" v-model="HomeAdd.domek.animals.Lisy" value="Lisy" id="Lisy"/>
         <label for="Lisy">Lisy</label>
-</div><div class="custom-control custom-checkbox">
+</div><div class="custom-control custom-checkbox pt-1 p-1">
         <input type="checkbox" v-model="HomeAdd.domek.animals.Sarny" value="Sarny" id="Sarny"/>
         <label for="Sarny">Sarny</label>
-</div><div class="custom-control custom-checkbox">
+</div><div class="custom-control custom-checkbox pt-1 p-1">
         <input type="checkbox" v-model="HomeAdd.domek.animals.Dziki" value="Dziki" id="Dziki"/>
         <label for="Dziki">Dziki</label>
      </div>
