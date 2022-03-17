@@ -3,11 +3,13 @@ import axios from 'axios';
 
 import HouseItem from './HouseItem.vue'
 
+import Houses from 'http://localhost:4567/api/houses.js'
+
 //var data={
 //  Houses:null,
 //}
 
-var Houses={
+/*var Houses={
   data () {
     return {
       houses: null,
@@ -15,21 +17,21 @@ var Houses={
   },
   methods: {
       async loadHouses(){
-        const response = await fetch("http://localhost:4567/api/houses");
+        const response = await fetch("http://localhost:4567/api/houses.js");
       const { data: houses } = await response.json()
       this.houses = houses
     }
   }
 }
 
-Houses.methods.loadHouses()
+Houses.methods.loadHouses()*/
 
 </script>
 
 <template>
-  <a href="/domki/dodaj">dodaj</a>
+  <RouterLink to="/domki/dodaj">Dodaj</RouterLink>
 
-  <HouseItem v-for="House in Houses.data()" v-bind:key="House">
+  <HouseItem v-for="House in Houses" v-bind:key="House">
     <template #heading>Documentation</template>
 
     Vue’s
