@@ -7,6 +7,10 @@
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
+    "express-cors": "^0.0.3",
+    "http-cors": "^2.0.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12"
   },
