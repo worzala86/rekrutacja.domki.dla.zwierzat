@@ -65,7 +65,14 @@ const HomeAdd={
 </script>
 
 <template>
+
+
+
   <form class=" pt-5 p-5">
+  <div class=" pt-2 p-2">
+  <RouterLink to="/">Powrót</RouterLink>
+</div>
+
     <div class="form-group pt-2 p-2">
       <label>Nazwa oferty</label>
       <input class="form-control" v-model="HomeAdd.domek.name"/>
@@ -77,7 +84,7 @@ const HomeAdd={
         <option value="ground">Montowany na ziemi</option>
       </select>
     </div>
-    <div class=" pt-2 p-2">
+    <div class="pt-2 p-2">
       <h3>Przeznaczony dla zwierząt</h3>
        <div class="custom-control custom-checkbox pt-1 p-1">
         <input type="checkbox" v-model="HomeAdd.domek.animals.Ptaki" value="Ptaki" id="Ptaki"/>
@@ -94,11 +101,12 @@ const HomeAdd={
      </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group pt-2 p-2">
       <label>Cena w PLN</label>
       <input class="form-control" v-model="HomeAdd.domek.price"/>
     </div>
-
-  <button v-on:click="HomeAdd.addHouse()" class="btn btn-primary" type="button">Zapisz</button>
+  <div class="pt-2 p-2">
+    <button v-on:click="HomeAdd.addHouse()" class="btn btn-primary" type="button">Zapisz</button>
+  </div>
 </form>
 </template>

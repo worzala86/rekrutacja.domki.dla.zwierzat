@@ -33,11 +33,20 @@ Houses.methods.loadHouses()*/
     <RouterLink to="/domki/dodaj" class="btn btn-primary">Dodaj</RouterLink>
   </div>
 
-  <HouseItem v-for="House in Houses" v-bind:key="House">
-    <template #heading>{{House.name}}</template>
-
-    {{House.name}}
-    <a target="_blank" href="https://vuejs.org/">{{House.name}}</a>
-    <div v-for="animal in House.animals" v-bind:key="animal">{{animal}}</div>
-  </HouseItem>
+  <div v-for="House in Houses" v-bind:key="House" class="p-5 pt-5">
+    <div>{{House.kind}}</div>
+    <h3>{{House.name}}</h3>
+    <div class="animals">
+      <div v-for="animal in House.animals" v-bind:key="animal">{{animal}}</div>
+    </div>
+  </div>
 </template>
+<style scoped>
+.animals{
+  display: inline-block;
+}
+.animals div{
+  display: inline-block;
+  margin-right: 15px;
+}
+</style>
