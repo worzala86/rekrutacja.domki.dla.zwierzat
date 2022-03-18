@@ -36,11 +36,16 @@ export default {
     <input type="text" placeholder="wpisz fraze do szukania.." v-model="filter" v-on:change="Houses=Houses"/>
   </div>
 
-  <div v-for="House in housesFilter" v-bind:key="House" class="p-4 pt-4">
-    <div>{{House.kind}}</div>
-    <h3>{{House.name}}</h3>
-    <div class="animals">
-      <div v-for="animal in House.animals" v-bind:key="animal">{{animal}}</div>
+  <div v-for="House in housesFilter" v-bind:key="House" class="p-4 pt-4 row">
+    <div class="col-2 price">
+      {{House.price}}
+    </div>
+    <div class="col-10">
+      <div>{{House.kind}}</div>
+      <h3>{{House.name}}</h3>
+      <div class="animals">
+        <div v-for="animal in House.animals" v-bind:key="animal">{{animal}}</div>
+      </div>
     </div>
   </div>
   </div>
@@ -52,5 +57,8 @@ export default {
 .animals div{
   display: inline-block;
   margin-right: 15px;
+}
+.price{
+  font-size:1.2em;
 }
 </style>
